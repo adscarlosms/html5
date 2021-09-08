@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+   margin:0;
+   padding: 0;
+}
+
+header{
+    min-height: 500px; /*define uma altura mínima para a imagem que prevalece sobre o tamanho da div*/
+    background-image: url("../images/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /*cobre toda a área do header com a imagem*/
+    background-position: bottom; /*coloca a imagem a partir da base*/
+    position: relative; /*posicionamento relativo, classe pai*/
+}
+
+header .bg-gradiente{
+    min-height: 300px;
+    /*Recurso de cores gradientes do https://www.colorzilla.com/gradient-editor*/
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 2%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 2%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 2%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    width: 100%;
+}
+
+header .header-border{
+    display: flex; /*O HEADER FOI DECLARADO COMO UM CONTAINER*/    
+    border-bottom: rgba(255,255,255,.25) 1px solid;
+}
+
+header #logo{
+    width: 200px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: #000 1px 1px 8px;
+}
+.menu{
+    flex: 1; /*abrange todo o resto fora os 200px*/
+}
+.menu ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none; /*para tirar a bolinha*/
+    padding: 0;
+}
+.menu li{
+    min-width: 100px;
+    line-height: 28px; /*altura da linha que o item irá ocupar*/
+}
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+}
+
+#register{
+    background-color: #FFF;
+    width: 100%;
+    height: 400px;
+    max-width: 350px;
+    position: absolute;
+    bottom: 0;
+    right: 10vw; /*pega pela largura do viewport*/
+    box-shadow: 0 0 2.1875rem rgba(140, 152,164,.125);
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    padding: 20px;
+    color: #333;
+}
+
+#register p{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+#register .field{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#register input{
+    width: 100%;
+    padding: .75rem 1rem;
+    border-radius: 4px;
+    border: #CCC 1 px solid;
+}
+
+#register input[type=radio]{
+    width: 25px;
+}
+
+#register button{
+    width: 100%;
+    border: none;
+    background-color: #E67E22 ;
+    color: #FFF;
+    padding: .75rem;
+    font-size: 1.2rem;
+}
+
+.container{
+    max-width: 9600px;
+    margin:auto;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.title h1{
+    font-size: 3em;
+    border-bottom: #CCC 1px solid;
+    padding-bottom: 1rem;
+}
+
+.home p{
+    text-align: justify;
+}
+
+footer{
+    background-color: #f5f5f5;
+    color: #6c757d;
+    font-size: .8em;
+}
+
+footer p{
+    line-height: 35px;
+}
+
+footer .container{
+    display: flex;
+}
+
+footer .menu a{
+    color : #6c757d;
+}
+.menu .open-menu{
+    display: none;
+}
+
+/*Responsividade*/
+@media(max-width: 450px){
+    header .header-border{
+        justify-content: space-between;
+    }
+    .menu ul{
+        display: none;
+    }
+    .menu{
+        width: 60px;
+        flex: initial;
+    }
+    .menu .open-menu{
+        display: block;
+        font-size: 2em;
+        padding: 9rem;
+        flex:1;
+        background: none;
+        color: #fff;
+    }
+    #register{
+        width: 90%;
+        margin:0 5%;
+        max-width: initial;
+        right: initial;
+    }
+}
